@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Typewriter | Test</title>
+    <title>Typewriter</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
     <style>
         
@@ -105,7 +105,8 @@
         function isValidKey(e)
             {
                 var key = e.key;
-                if (key == "Backspace" || key == "Delete")
+                document.getElementById('typearea').innerHTML = key;
+                if (key == "Backspace" || key == "Delete" || key == "KEYCODE_DEL" || key == "KEYCODE_FORWARD_DEL")
                     return false;
                 if (key == "Enter") {
                     var audio = document.getElementById('Slice50');
