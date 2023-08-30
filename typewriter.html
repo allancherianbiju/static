@@ -106,7 +106,6 @@
             {
                 var key = e.key;
                 var keyCode = e.keyCode || e.which;
-                document.getElementById('typearea').innerHTML = key;
                 if (key == "Backspace" || key == "Delete" || keyCode == 112 || keyCode == 67)
                     return false;
                 if (key == "Enter") {
