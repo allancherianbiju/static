@@ -111,15 +111,15 @@
                     var audio = document.getElementById('Slice50');
                     audio.currentTime = 0;
 			        audio.play();
+                    return true;
                 }
                 if (key != "Enter" || key != "Backspace" || key != "Delete") {
                     var randomIndex = Math.floor(Math.random() * audioFiles.length);
                     var audio = document.getElementById(audioFiles[randomIndex]);
                     audio.currentTime = 0;
                     audio.play();
+                    return true;
                 }
-
-                return true;
             }
     </script>
   </body>
