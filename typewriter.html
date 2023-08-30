@@ -98,30 +98,25 @@
 
     <script>
         
-
-        var input = document.getElementById("typearea");
-
 		var audioFiles = ['Slice1', 'Slice2', 'Slice3', 'Slice4', 'Slice5', 'Slice6', 'Slice8', 'Slice9', 'Slice12', 'Slice13', 'Slice16', 'Slice17', 'Slice18', 
             'Slice21', 'Slice23', 'Slice24', 'Slice31', 'Slice32', 'Slice33', 'Slice34', 'Slice36', 'Slice37', 'Slice39', 'Slice44', 'Slice48', 'Slice49']
         
-        
-        input.addEventListener("keydown", function(event) {
-			var randomIndex = Math.floor(Math.random() * audioFiles.length);
-			var audio = document.getElementById(audioFiles[randomIndex]);
-			audio.currentTime = 0;
-			audio.play();
-		});
-
         // https://stackoverflow.com/a/1244590https://stackoverflow.com/a/1244590
         function isValidKey(e)
             {
-                var charCode = e.keyCode || e.which;
-                if (charCode == 8 || charCode == 46)
+                var key = e.key;
+                if (key == "Backspace" || key == "Delete")
                     return false;
-                if (charCode == 13) {
+                if (key == "Enter") {
                     var audio = document.getElementById('Slice50');
                     audio.currentTime = 0;
 			        audio.play();
+                }
+                if (key != "Enter" || key != "Backspace" || key != "Delete") {
+                    var randomIndex = Math.floor(Math.random() * audioFiles.length);
+                    var audio = document.getElementById(audioFiles[randomIndex]);
+                    audio.currentTime = 0;
+                    audio.play();
                 }
 
                 return true;
