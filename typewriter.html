@@ -106,7 +106,7 @@
             {
                 var key = e.key;
                 var keyCode = e.keyCode || e.which;
-                if (key == "Backspace" || key == "Delete" || keyCode == 112 || keyCode == 67)
+                if (key == "Backspace" || key == "Delete")
                     return false;
                 if (key == "Enter") {
                     var audio = document.getElementById('Slice50');
@@ -125,3 +125,5 @@
     </script>
   </body>
 </html>
+
+<!-- Move CSS, fix mobile backspace still working, disable cursor movement -->
